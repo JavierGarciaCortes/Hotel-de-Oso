@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel del Oso</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        .fototext {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid border bg-light">
+            <div class="container">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-7 col-md-3"><a href="index.html"><img src="img/logo-oso.png" alt="Logo Hotel del Oso" style="max-width: 120px"></a></div>
+                    <div class="col">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            HOTEL
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item disabled" href="#">LAS HABITACIONES</a>
+                                            <a class="dropdown-item disabled" href="#">LOS ESPACIOS</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            RESTAURANTE
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item disabled" href="#">ESPECIALIDADES</a>
+                                            <a class="dropdown-item disabled" href="#">RECETAS</a>
+                                            <a class="dropdown-item" href="http://clubcalidadcantabriainfinita.es/es/" target="_blank">EL CLUB DE CALIDAD</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            TARIFAS
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="promociones.html">PROMOCIONES</a>
+                                            <a class="dropdown-item" href="solicitudReserva.php">SOLICITUD RESERVA</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#">DONDE ESTAMOS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="picos_de_europa.html">PICOS DE EUROPA</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#">RUTAS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Carusel de fotos -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner no-gutters">
+            <div class="carousel-item active">
+                <img src="img/exterior-1.jpg" class="d-block w-100" alt="Hotel del Oso">
+                <div class="carousel-caption d-none d-md-block fototext">
+                    <h5>Hotel del Oso</h5>
+                    <p>Estaras como en casa.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/exterior-2.jpg" class="d-block w-100" alt="Jardin Hotel del Oso">
+                <div class="carousel-caption d-none d-md-block fototext">
+                    <h5>Descansa</h5>
+                    <p>En nuestros bellos jardines.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/saborea-sld.jpg" class="d-block w-100" alt="Comida">
+                <div class="carousel-caption d-none d-md-block fototext">
+                    <h5>Saborea</h5>
+                    <p>La deliciosa gastronomia de Cantabria.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/asomate_slider.jpg" class="d-block w-100" alt="Vistas desde hotel">
+                <div class="carousel-caption d-none d-md-block fototext">
+                    <h5>Asómate</h5>
+                    <p>Disfruta de los pirineos.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/descubre-slider.jpg" class="d-block w-100" alt="Picos de Europa">
+                <div class="carousel-caption d-none d-md-block fototext">
+                    <h5>Descubre</h5>
+                    <p>La naturaleza que te rodea.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <main class="container">
+        <!-- Frase y enlace a solicitar reserva  -->
+        <div class="row align-items-center pt-3">
+            <div class="col-md-9 d-flex justify-content-center">
+                <p class="font-italic text-center" style="font-size: 2em; font-family: Merienda;">Hotel del Oso, un lugar para disfrutar con todos los sentidos.</p>
+            </div>
+            <div class="d-flex flex-sm-row flex-md-column col align-items-center justify-content-center">
+                <img src="img/banner-reserva-100x100.png" class="card-img-top" alt="reserva" style="max-width: 100px;">
+                <div class="">
+                    <a href="solicitudReserva.php" class="btn btn-success" style="max-width: 100px;">SOLICITAR RESERVA</a>
+                </div>
+            </div>
+        </div>
+        <!-- Presentación hotel -->
+        <div class="d-flex flex-column flex-md-row py-5">
+            <div class="col-md-4">
+                <h3 class="font-italic text-sm-center text-md-right">Calidad y trato familiar a nuestros clientes</h3>
+            </div>
+            <div class="col">
+                <p class="text-justify">El Hotel está situado en el corazón del Valle de Liébana, a los pies de los Picos de Europa. Lo conforman dos edificios respetuosos con la arquitectura montañesa del lugar, construidos con madera y sillería artesanalmente trabajada que enmarca ventanas y balcones.</p>
+                <p class="text-justify">Inicialmente existía un solo edificio que funcionaba como un pequeño hostal hasta que en la primavera de 1980 fue inaugurado el actual Hotel del Oso, que consta de dos edificios, el principal y el anexo, ampliando así el número de habitaciones, los salones comunes y el espacio destinado a la restauración.</p>
+                <p class="text-justify">La familia Rivas, propietaria del hotel, lleva cuidando a lo largo de todos estos años la calidad de sus productos, servicios y el trato familiar que se ofrece al cliente.</p>
+            </div>
+        </div>
+        <!-- info extra -->
+        <div class="d-flex flex-column flex-md-row pb-5 ">
+            <div class="col">
+                <p><img class="border border-dark rounded" src="img/piscina%20exterior.jpg" alt="Piscina exterior"></p>
+            </div>
+            <div class="col pl-md-5">
+                <div class="row">
+                    <p><strong>Otros servicios:</strong></p>
+                </div>
+                <div class="row">
+                    <p>· WIFI gratis en todos los edificios</p>
+                </div>
+                <div class="row">
+                    <p>· Salones adaptables a sus necesidades</p>
+                </div>
+                <div class="row">
+                    <p>· Piscina y pista de tenis</p>
+                </div>
+                <div class="row">
+                    <p>· Disponibilidad de habitaciones comunicadas para familias</p>
+                </div>
+                <div class="row">
+                    <p>· Salas de juegos y de reuniones</p>
+                </div>
+                <div class="row">
+                    <p>· Zona de juegos infantil con hórreo y casita de cuento</p>
+                </div>
+                <div class="row">
+                    <p>· Puesto de trabajo con PC y ADSL para clientes</p>
+                </div>
+                <div class="row">
+                    <p>· Posibilidad de almacenar y lavar tus bicis de montaña</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid border bg-light">
+            <div class="container">
+                <div class="row align-items-center no-gutters">
+                    <div class="d-flex justify-content-center col-md-4"><a href="http://clubcalidadcantabriainfinita.es/es/" target="_blank"><img src="img/logoclubdecalidad.jpg" alt="Logo Club Caldad Cantabria Infinita"></a></div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center"><a href="https://www.facebook.com/Hoteldeloso/" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook.png"></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">Cosgaya (Cantabria) Spain. Tel. +34 942 733 018 info@hoteldeloso.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
