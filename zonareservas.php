@@ -127,13 +127,16 @@ $hotel=new HotelBd(); // creo objeto
                 $check=$hotel->checkId($numID);
                 if(!empty($check)){
                     $hotel->showReservasId($numID);
+					$hotel->showNumTable2();
                 }else{
-                    echo "<div class='error'>El Id $numID es erroneo<div>";
+                    echo "<div class='alert alert-danger mt-2' role='alert'>El Id $numID es erroneo</div>";
+					$hotel->showNumTable2();
                 }
             }elseif(!empty($_GET['name']) && !empty($_GET['surname'])){
                 $name=$hotel->filtrarResU8($_GET['name']);
                 $surname=$hotel->filtrarResU8($_GET['surname']);
-                $hotel->showReservasNS($name, $surname);  
+                $hotel->showReservasNS($name, $surname); 
+				$hotel->showNumTable2();
             }else{
                 $hotel->showNumTable2();
             }
@@ -158,6 +161,7 @@ $hotel=new HotelBd(); // creo objeto
                 $name=$hotel->filtrarResU8($_GET['name']);
                 $surname=$hotel->filtrarResU8($_GET['surname']);
                 $hotel->showReservasNS($name, $surname);
+				$hotel->showNumTable2();
             }
         }
         ?>

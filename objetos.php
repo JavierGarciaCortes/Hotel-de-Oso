@@ -176,27 +176,27 @@ class HotelBd{
     $resultados = $this->db->query($sql);
     $rows=$resultados->num_rows;
     if(empty($_GET['pag'])){
-        echo "<div id='pas'><div ><a style='font-weight: bold;color: black' href='zonareservas.php?pag=1&num=3'>3</a></div>";
-        echo "<div><a style='font-weight: bold;color: black' href='zonareservas.php?pag=1&num=4'>4</a></div>";
-        echo "<div><a style='font-weight: bold;color: black' href='zonareservas.php?pag=1&num=5'>5</a></div></div>";
+        echo "<nav aria-label='Page navigation example'><ul class='pagination d-flex justify-content-between'><li class='page-item'><a class='page-link' href='zonareservas.php?pag=1&num=3'>3</a></li>";
+        echo "<li class='page-item'><a class='page-link' href='zonareservas.php?pag=1&num=4'>4</a></li>";
+        echo "<li class='page-item'><a class='page-link' href='zonareservas.php?pag=1&num=5'>5</a></li></ul></nav>";
         $this->imprimir($this->showReservas());
     }else{
         if($_GET['pag']==1){
             $num=$_GET['num'];
             $elm=0;
-            echo "<div id='pas'><div><a style='font-weight: bold;color: black' href='zonareservas.php?pag=0'>Todos</a></div>";
-            echo "<div><a style='font-weight: bold;color: black' href='zonareservas.php?pag=2&num=$num'>Next</a></div></div>";
+            echo "<nav aria-label='Page navigation example'><ul class='pagination d-flex justify-content-between'><li class='page-item'><a class='page-link' href='zonareservas.php?pag=0'>Todos</a></li>";
+            echo "<li class='page-item'><a class='page-link' href='zonareservas.php?pag=2&num=$num'>Next</a></li></ul></nav>";
         }else{
             $pag=$_GET['pag'];
             $num=$_GET['num'];
             $elm=($pag-1)*$num;
             $PrePag=$pag-1;
-            echo "<div id='pas'><a style='font-weight: bold;color: black' href='zonareservas.php?pag=$PrePag&num=$num'>Prev</a>";
+            echo "<nav aria-label='Page navigation example'><ul class='pagination d-flex justify-content-between'><li class='page-item'><a class='page-link' href='zonareservas.php?pag=$PrePag&num=$num'>Prev</a></li>";
             if($elm+$num<$rows){
                 $NextPag=$pag+1;
-                echo "<a style='font-weight: bold;color: black' href='zonareservas.php?pag=$NextPag&num=$num'>Next</a></div>";
+                echo "<li class='page-item'><a class='page-link' href='zonareservas.php?pag=$NextPag&num=$num'>Next</a></li></ul></nav>";
             }else{ 
-                echo "<div><a style='font-weight: bold;color: black' href='zonareservas.php?pag=0'>Todos</a></div>";
+                echo "<li class='page-item'><a class='page-link' href='zonareservas.php?pag=0'>Todos</a></li></ul></nav>";
                 echo "</div>"; 
                  }
         }

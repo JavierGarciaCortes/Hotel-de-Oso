@@ -309,24 +309,7 @@ if ($_SESSION['acceso']!=1){
 
 		<?php
 }else{ ?>
-		<div id="centrartodo">
-			<script>
-				window.onload = inicio;
-
-				function inicio() {
-					document.getElementById("cerrar").onclick = cerrar;
-					document.getElementById("reservas").onclick = reservas;
-				}
-
-				function cerrar() {
-					location.href = "CerrarSesiones.php";
-				}
-
-				function reservas() {
-					location.href = "zonareservas.php";
-				}
-
-			</script>
+		<div class="container">
 			<a class="btn btn-primary btn-sm" href="CerrarSesiones.php" role="button">Cerrar sesion</a>
 			<a class="btn btn-primary btn-sm" href="zonareservas.php" role="button">Zona reservas</a>
 			<div id="formularios">
