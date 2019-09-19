@@ -8,25 +8,13 @@ $hotel=new HotelBd(); // creo objeto
 
 <head>
 	<meta charset="UTF-8">
-	<title>Check reservas</title>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	<script src="js/datos1.js"></script>
-	<link rel="stylesheet" href="css/estilo.css">
+	<title>Zona reservas | Hotel del Oso</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style>
-		#tusReservas,
-		.error {
-			width: 400px;
-			margin: 10px auto;
-		}
-
-		.error {
-			padding: 5px;
-		}
-
-		#table2 {
+		img {
 			width: 100%;
-			background-color: dimgrey;
-			text-align: center;
+			vertical-align: bottom;
 		}
 
 	</style>
@@ -34,74 +22,112 @@ $hotel=new HotelBd(); // creo objeto
 
 <body>
 	<header>
-		<div id="boxbaner">
-			<div id="banner">
-				<div id="burger"><img src="img/burger.svg" alt="menu"></div>
-				<div id="topnaver">
-					<div id="hotel" class="navCSS">HOTEL</div>
-					<nav id="navHotel"><a href="">LAS HABITACIONES</a><a href="">LOS ESPACIOS</a></nav>
-					<div id="restaurante" class="navCSS"><a href="zonareservas.php">CHECK RESERVAS</a></div>
-					<div id="tarifas" class="navCSS">TARIFAS Y RESERVAS</div>
-					<nav id="navTarifas"><a href="promociones.html">PROMOCIONES</a><a href="solicitudReserva.php">SOLICITUD DE RESERVA</a></nav>
+		<div class="container-fluid border bg-light">
+			<div class="container">
+				<div class="row align-items-center no-gutters">
+					<div class="col-7 col-md-3"><a href="index.html"><img src="img/logo-oso.png" alt="Logo Hotel del Oso" style="max-width: 120px"></a></div>
+					<div class="col">
+						<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNavDropdown">
+								<ul class="navbar-nav">
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											HOTEL
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											<a class="dropdown-item disabled" href="#">LAS HABITACIONES</a>
+											<a class="dropdown-item disabled" href="#">LOS ESPACIOS</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											RESTAURANTE
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											<a class="dropdown-item disabled" href="#">ESPECIALIDADES</a>
+											<a class="dropdown-item disabled" href="#">RECETAS</a>
+											<a class="dropdown-item" href="http://clubcalidadcantabriainfinita.es/es/" target="_blank">EL CLUB DE CALIDAD</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											TARIFAS
+										</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+											<a class="dropdown-item" href="promociones.html">PROMOCIONES</a>
+											<a class="dropdown-item" href="solicitudReserva.php">SOLICITUD RESERVA</a>
+											<a class="dropdown-item" href="zonareservas.php">ZONA RESERVAS</a>
+										</div>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link disabled" href="#">DONDE ESTAMOS</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="picos_de_europa.html">PICOS DE EUROPA</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link disabled" href="#">RUTAS</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
 				</div>
-				<div id="banertitle">Check reservas</div>
-				<div id="logobaner"><a href="index.html"><img src="img/logo-oso.png" alt="Logo Hotel del Oso"></a></div>
 			</div>
 		</div>
 	</header>
 
-	<div id="centrartodo">
-		<?php
+	<!-- Barra negra -->
+	<div class="container-fluid p-0" style="background-color: black">
+		<div class="container">
+			<nav class="row" aria-label="breadcrumb">
+				<ol class="breadcrumb m-0" style="background-color: black">
+					<li class="breadcrumb-item"><a href="index.html">HOME</a></li>
+					<li class="breadcrumb-item active" aria-current="page">ZONA RESERVAS</li>
+				</ol>
+			</nav>
+			<div class="row pl-3">
+				<h3 style="color: white;">ZONA RESERVAS</h3>
+			</div>
+		</div>
+	</div>
+
+		<main class="container">
+			<?php
         error_reporting(0);
         if ($_SESSION['acceso']==1){
         ?>
-		<script>
-			window.onload = inicio;
-
-			function inicio() {
-				document.getElementById("cerrar").onclick = cerrar;
-				document.getElementById("reservas").onclick = reservas;
-			}
-
-			function cerrar() {
-				location.href = "CerrarSesiones.php";
-			}
-
-			function reservas() {
-				location.href = "solicitudReserva.php";
-			}
-
-		</script>
-		<button id="cerrar">Cerrar sesion</button>
-		<button id="reservas">Solicitud reservas</button>
-		<form method="get" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ?>">
-			<fieldset id="tusReservas">
-				<legend>Tus reservas</legend>
-				Busca por Id o por nombre y apellido<br>
-				<div class="linea">
-					<label for="userID">Id cliente</label>
-					<input type="number" name="userID">
-				</div>
-				<div class="linea">
-					<label for="name">Nombre</label>
-					<input type="text" name="name" placeholder="Nombre">
-				</div>
-				<div class="linea">
-					<label for="surname">Apellidos</label>
-					<input type="text" name="surname" placeholder="Apellidos">
-				</div>
-				<input type="submit" name="send" value="Reservas">
-			</fieldset>
-		</form> <!-- Buscar por id o nombre y apellido -->
-		<?php
+			<a class="btn btn-primary btn-sm" href="CerrarSesiones.php" role="button">Cerrar sesion</a>
+			<a class="btn btn-primary btn-sm" href="solicitudReserva.php" role="button">Solicitud reservas</a>
+			<form method="get" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ?>">
+				<fieldset id="tusReservas">
+					<legend>Tus reservas</legend>
+					Busca por Id o por nombre y apellido<br>
+					<div class="linea">
+						<label for="userID">Id cliente</label>
+						<input type="number" name="userID">
+					</div>
+					<div class="linea">
+						<label for="name">Nombre</label>
+						<input type="text" name="name" placeholder="Nombre">
+					</div>
+					<div class="linea">
+						<label for="surname">Apellidos</label>
+						<input type="text" name="surname" placeholder="Apellidos">
+					</div>
+					<input type="submit" name="send" value="Reservas">
+				</fieldset>
+			</form> <!-- Buscar por id o nombre y apellido -->
+			<?php
             if(!empty($_GET['userID'])){
                 $numID=$hotel->filtrarResU8($_GET['userID']);
                 $check=$hotel->checkId($numID);
                 if(!empty($check)){
-                    echo $check;
                     $hotel->showReservasId($numID);
                 }else{
-                    echo $check;
                     echo "<div class='error'>El Id $numID es erroneo<div>";
                 }
             }elseif(!empty($_GET['name']) && !empty($_GET['surname'])){
@@ -113,21 +139,21 @@ $hotel=new HotelBd(); // creo objeto
             }
         }else{
         ?>
-		<form method="get" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ?>">
-			<fieldset id="tusReservas">
-				<legend>Tus reservas</legend>
-				<div class="linea">
-					<label for="name">Nombre</label>
-					<input type="text" name="name" placeholder="Nombre">
-				</div>
-				<div class="linea">
-					<label for="surname">Apellidos</label>
-					<input type="text" name="surname" placeholder="Apellidos">
-				</div>
-				<input type="submit" name="send" value="Reservas">
-			</fieldset>
-		</form> <!-- Buscarnombre y apellido -->
-		<?php
+			<form method="get" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ?>">
+				<fieldset id="tusReservas">
+					<legend>Tus reservas</legend>
+					<div class="linea">
+						<label for="name">Nombre</label>
+						<input type="text" name="name" placeholder="Nombre">
+					</div>
+					<div class="linea">
+						<label for="surname">Apellidos</label>
+						<input type="text" name="surname" placeholder="Apellidos">
+					</div>
+					<input type="submit" name="send" value="Reservas">
+				</fieldset>
+			</form> <!-- Buscarnombre y apellido -->
+			<?php
             if(!empty($_GET['name']) && !empty($_GET['surname'])){
                 $name=$hotel->filtrarResU8($_GET['name']);
                 $surname=$hotel->filtrarResU8($_GET['surname']);
@@ -135,8 +161,28 @@ $hotel=new HotelBd(); // creo objeto
             }
         }
         ?>
-	</div>
-</body>
+		</main>
+		<footer>
+			<div class="container-fluid border bg-light">
+				<div class="container">
+					<div class="row align-items-center no-gutters">
+						<div class="d-flex justify-content-center col-md-4"><a href="http://clubcalidadcantabriainfinita.es/es/" target="_blank"><img src="img/logoclubdecalidad.jpg" alt="Logo Club Caldad Cantabria Infinita"></a></div>
+						<div class="col">
+							<div class="row">
+								<div class="col-12 d-flex justify-content-center"><a href="https://www.facebook.com/Hoteldeloso/" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook.png"></a></div>
+							</div>
+							<div class="row">
+								<div class="col-12 d-flex justify-content-center">Cosgaya (Cantabria) Spain. Tel. +34 942 733 018 info@hoteldeloso.com</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
 
 </html>
 <?php

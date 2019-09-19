@@ -37,7 +37,7 @@ class HotelBd{
         return $datos;
     }										// Retorna un array con los clientes con reserva
     function imprimir($datos){ 
-        echo "<div id='tabla'><table>";
+        echo "<div class='table-responsive my-2'><table class='table table-striped table-dark'>";
         echo "<tr>";
         foreach ($datos as $key=>$value){ 
             foreach ($value as $key=>$values){
@@ -45,7 +45,7 @@ class HotelBd{
             }
         }// para sacar los titulos de la tabla
         for($i=0; $i<count($value); $i++){
-            echo "<th>$mykey[$i]</th>";
+            echo "<th scope='col'>$mykey[$i]</th>";
         }// Imprime los titulos 
         echo "</tr>";
         foreach ($datos as $valor){
@@ -134,31 +134,31 @@ class HotelBd{
             $mykey[] = $key;
         }
     }// para sacar los titulos de la tabla
-    echo "<table id='table2'>";
+    echo "<div class='table-responsive my-2'><table class='table table-striped table-dark'>";
     echo "<tr>";
-    echo "<th>Id reserva</th>";
-    echo "<th>Nombre</th>";
-    echo "<th>Apellido</th>";
-    echo "<th>Room</th>";
-    echo "<th>Entrada</th>";
-    echo "<th>Salida</th>"; 
-    echo "<th>Modificar</th>";
+    echo "<th scope='col'>Id reserva</th>";
+    echo "<th scope='col'>Nombre</th>";
+    echo "<th scope='col'>Apellido</th>";
+    echo "<th scope='col'>Room</th>";
+    echo "<th scope='col'>Entrada</th>";
+    echo "<th scope='col'>Salida</th>"; 
+    echo "<th scope='col'>Modificar</th>";
     echo "</tr>";
     $numRes=count($datos);
     for  ($i=0; $i<$numRes; $i++){
         echo "<tr>\n ";
-        echo "<td><form method='get'>".$datos[$i][id_reserva]." <button type='submit' name='Borrar' value='".$datos[$i][id_reserva]."'>Borrar</button></form></td>";
+        echo "<td><form method='get'>".$datos[$i][id_reserva]." <button type='submit' class='btn btn-danger btn-sm' name='Borrar' value='".$datos[$i][id_reserva]."'>Borrar</button></form></td>";
         echo "<td>".$datos[$i][name]."</td>";
         echo "<td>".$datos[$i][surname]."</td>";
         echo "<form method='get'>";
         echo "<td><select name='room'><option value='".$datos[$i][room]."'>".$datos[$i][room]."</option><option value='doble'>Doble</option><option value='individual'>Individual</option><option value='familiar'>Familiar</option><option value='comunicadas'>Comunicadas</option></select></td>";
         echo "<td><input type='date' name='entrada' value='".$datos[$i][entrada]."'></td>";
         echo "<td><input type='date' name='sortida' value='".$datos[$i][sortida]."'></td>";
-        echo "<td><button type='submit' name='Modificar' value='".$datos[$i][id_reserva]."'>Modificar</button></td>";
+        echo "<td><button type='submit' class='btn btn-success btn-sm' name='Modificar' value='".$datos[$i][id_reserva]."'>Modificar</button></td>";
         echo "</form>";
         echo "</tr>\n ";
     }
-    echo "</table>";
+    echo "</table></div>";
      }							// Imprime arrays en tabla y puedes eliminar o editar
     function getTablaElmMost($elm,$mostr){  
     $datos=[];

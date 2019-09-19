@@ -6,5 +6,4 @@ session_destroy();
 ?>
 <script> 
     location.href="solicitudReserva.php";
-
 </script>
