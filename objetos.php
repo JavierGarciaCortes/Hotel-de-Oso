@@ -115,14 +115,14 @@ class HotelBd{
 }									// Retorna un array con los clientes con reserva segun su id
     function showReservasNS($name, $surname){  
         $datos=[];
-        $sql="SELECT c.id_client, name, surname, entrada, sortida FROM clients c JOIN reserves r ON c.name='$name' AND c.surname='$surname' AND c.id_client = r.id_client ORDER BY entrada";
+        $sql="SELECT c.id_client, name, surname, entrada, sortida, room FROM clients c JOIN reserves r ON c.name='$name' AND c.surname='$surname' AND c.id_client = r.id_client ORDER BY entrada";
         $resultados = $this->db->query($sql);
         $rows=$resultados->num_rows;
         for($i=0; $i<$rows; $i++){
             $fila=$resultados->fetch_assoc();
             $datos[]=$fila;
         }if(empty($datos)){
-            echo "<div class='error'>Cliente desconocido</div>";
+            echo "<div class='alert alert-danger'>Cliente desconocido</div>";
         }else{
             $this->imprimir($datos);
         }
