@@ -103,9 +103,9 @@ $hotel=new HotelBd(); // creo objeto
 	<main class="container">
 
 
-		<?php
-		if(isset($_POST['enviar'])){
-			$usuario=$_POST['usuario'];
+<?php
+   if(isset($_POST['enviar'])){
+	    $usuario=$_POST['usuario'];
             $password=$_POST['password'];
             $pwc='admin';
             if(!strcmp($usuario, 'admin') && !strcmp($password, 'admin')) { 
@@ -113,7 +113,7 @@ $hotel=new HotelBd(); // creo objeto
                 $_SESSION['acceso']=1;
                 header("location:solicitudReserva.php ");
             }// comprobar usuario y contraseña
-		}	
+    }	
     if ($_SESSION['acceso']!=1){
         ?>
 		<!-- Intro  -->
